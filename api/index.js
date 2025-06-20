@@ -1,3 +1,5 @@
+import { getArrayMax } from '../lib/util'
+
 export default function handler(req, res) {
   // CORS ヘッダーなど、必要に応じて他のヘッダーを追加できます
   // res.setHeader('Access-Control-Allow-Origin', '*');
@@ -10,6 +12,7 @@ export default function handler(req, res) {
   res.status(200).json({
     author: 'usachoco',
     message: 'Hello from Vercel API!',
+    max: getArrayMax([1, 2, 3, 4, 5]),
     timestamp: new Date().toISOString()
   });
 }
